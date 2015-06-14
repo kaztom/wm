@@ -2,7 +2,6 @@
 
 class Analize
 {
-    public $count  = 0;
     public $config = null;
 
     function main ()
@@ -99,7 +98,7 @@ class Analize
     {
         if (!empty($data_list[$day][$type])) {
             if ($this->config['duplicate_format']) {
-                $count = count($data_list[$day[1]]) % 7 + 1;
+                $count = floor(count($data_list[$day]) / 7) + 1;
                 $data_list[$day][$type . $count] = $real_data;
             }
         } else {
