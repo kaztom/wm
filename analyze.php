@@ -10,7 +10,7 @@ class Analize
         $this->config = $config;
 
         // ファイルの読み込み
-        $html_source = file_get_contents('./output/output.html');
+        $html_source = file_get_contents($this->config['output_path']);
 
         // データを行ごとに配列変換
         $line_list = explode("\n", $html_source);
